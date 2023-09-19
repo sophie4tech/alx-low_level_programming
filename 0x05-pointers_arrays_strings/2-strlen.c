@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * int _strlen -  function that returns the length of a string
- * @s:  declaration of *s and paramters for the function _strlen
+ * _strlen - function that returns the length of a string
+ * @s: strings to be checked
  *
- * Return: 0 success
+ * Return: string length
  */
 int _strlen(char *s)
 {
@@ -13,6 +13,7 @@ int _strlen(char *s)
 
 	for (c = 0; s[c] != 0; c++)
 	{
+		c++;
 	}
 	return (c);
 }
