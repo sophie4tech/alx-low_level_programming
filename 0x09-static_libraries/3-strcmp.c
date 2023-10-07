@@ -4,20 +4,16 @@
  * @s1: input value
  * @s2: input value
  *
- * Return: s1[i] - s2[i]
+ * Return: 0 success
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int a;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	for (a = 0; s1[a] != '\0' && s2[a] != '\0'; a++)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
+		if (s1[a] != s2[a])
+		return (s1[a] - s2[a]);
 	}
 	return (0);
 }

@@ -4,22 +4,27 @@
  * _strpbrk - searches a string for any of a set of bytes
  * @s: input
  * @accept: input
- * Return: s
- * NULL, if no such byte is found
+ * Return: s or null, if no such byte is found
  */
 char *_strpbrk(char *s, char *accept)
 {
-		int j;
+	int x, y;
+	char *p;
 
-		while (*s)
+	x = 0;
+	while (s[x] != '\0')
+	{
+		y = 0;
+		while (accept[y] != '\0')
 		{
-			for (j = 0; accept[j]; j++)
+			if (accept[y] == s[x])
 			{
-			if (*s == accept[j])
-			return (s);
+				p = &s[x];
+				return (p);
 			}
-		s++;
+			y++;
 		}
-
-	return ('\0');
+		x++;
+	}
+	return (NULL);
 }

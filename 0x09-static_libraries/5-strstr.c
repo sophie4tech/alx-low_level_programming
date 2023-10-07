@@ -3,25 +3,23 @@
  * _strstr -  locates a substring
  * @haystack: input
  * @needle: input
- * Return: 0 success
- * NULL, if the substring is not found
+ * Return: haystack or null if the substring is not found
  */
 char *_strstr(char *haystack, char *needle)
 {
-	for (; *haystack != '\0'; haystack++)
+	while (*haystack != '\0')
 	{
-		char *l = haystack;
-		char *p = needle;
+		char *all = haystack;
+		char *ptt = needle;
 
-		while (*l == *p && *p != '\0')
+		while (*ptt == *haystack && *ptt != '\0' && *haystack != '\0')
 		{
-			l++;
-			p++;
+			haystack++;
+			ptt++;
 		}
-
-		if (*p == '\0')
-			return (haystack);
+		if (*ptt == '\0')
+			return (all);
+		haystack = all + 1;
 	}
-
-	return (0);
+	return (NULL);
 }
